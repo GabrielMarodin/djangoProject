@@ -29,8 +29,7 @@ vagas_cho1ices = {
     '28': 28,
     '29': 29,
     '30': 30,
-    '31': 31,
-      
+    '31': 31
 }
 
 jogo_choices = {
@@ -38,13 +37,13 @@ jogo_choices = {
     'DotA 2': 'Defense of the Ancients',
     'CoD MW': 'Call of Duty Modern Warfare',
     'Hs' : 'Hearthstone',
-    'AoE 2' : 'Age of Empires 2'
+    'AoE 2' : 'Age of Empires 2',
     'FF' : 'Free fire'
 }
 
 plataforma_choices = {
     'PS4' : 'PlayStation 4',
     'Xbox': 'Xbox One',
-    'PC': 'Computador pessoal'
-    'Plataforma mobile'
+    'PC': 'Computador pessoal',
+    'Mobile': 'Plataforma mobile'
 }
