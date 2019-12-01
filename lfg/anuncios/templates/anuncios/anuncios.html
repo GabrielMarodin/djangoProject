@@ -1,0 +1,9 @@
+{% if  %}
+    <ul>
+    {% for anuncio in anuncios %}
+        <li><a href="{% url 'anuncios:detail' anuncio.id %}">{{ anuncio.titulo }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Não tem anuncios disponíveis.</p>
+{% endif %}
