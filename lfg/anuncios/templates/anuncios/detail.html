@@ -1,5 +1,14 @@
-<h1>{{ anuncio.titulo }}</h1>
-<p>{{ anuncio.descricao }}</p>
-<p>{{ anuncio.plataforma }}</p>
-<p>{{ anuncio.vagas }}</p>
-<img src="{{ anuncio.foto_principal.url }}">
+<div class="row">
+    <div class="col m-12">
+        <h1>{{ anuncio.titulo }}</h1>
+        <img src="{{ anuncio.foto_principal.url }}">
+    </div>
+    <div class="col m-12">
+        <h3>Vagas: {{ anuncio.vagas }}</h3>
+        <p>{{ anuncio.descricao }}</p>
+    </div>
+    <div class="col m-12">
+        <p>{{ anuncio.plataforma }}</p>
+    </div>
+</div>
+  
