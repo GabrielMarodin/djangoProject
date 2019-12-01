@@ -5,3 +5,4 @@
 env
 .vscode/launch.json
 migrations/
+files/

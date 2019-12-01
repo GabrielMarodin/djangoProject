@@ -1,9 +1,29 @@
-{% if  %}
-    <ul>
-    {% for anuncio in anuncios %}
-        <li><a href="{% url 'anuncios:detail' anuncio.id %}">{{ anuncio.titulo }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>Não tem anuncios disponíveis.</p>
-{% endif %}
+<div class="anuncios">
+    <div class="row">
+    {% if anuncios %}
+        {% for anuncio in anuncios %}
+            <div class="col m-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ anuncio.foto_principal.url }}">
+                        <span class="card-title">{{ anuncio.titulo }}</span>
+                        <span class="card-title">{{ anuncio.jogo }}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ anuncio.descricao }}</p>
+                        <p>{{anuncio.data_cadastro|date:"D d M Y"}}</p>
+                        <p>por: {{anuncio.user.nome}} </p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{% url 'anuncios:detail' anuncio.id %}">Detalhes</a>
+                        <a href="{% url 'anuncios:detail' anuncio.id %}">Vagas: {{ anuncio.vagas }}</a>
+                        <a href="{% url 'anuncios:detail' anuncio.id %}">{{ anuncio.plataforma }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Não tem anuncios disponíveis.</p>
+    {% endif %}
+    </div>
+</div>

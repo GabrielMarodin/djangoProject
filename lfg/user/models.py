@@ -4,9 +4,6 @@ from datetime import datetime
 class User(models.Model):
     nome = models.CharField(max_length=200)
     email = models.EmailField()
-    mensagem = models.TextField(blank=True)
     data_user = models.DateTimeField(default=datetime.now, blank=True)
-    user_id = models.IntegerField(blank=True)
-
     def __str__(self):
         return self.nome

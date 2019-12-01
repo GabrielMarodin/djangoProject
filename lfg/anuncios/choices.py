@@ -1,4 +1,4 @@
-vagas_cho1ices = {
+vagas_choices = {
     '1': 1,
     '2': 2,
     '3': 3,

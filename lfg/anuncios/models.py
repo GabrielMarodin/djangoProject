@@ -10,7 +10,7 @@ class Anuncio(models.Model):
     jogo = models.CharField(max_length=100)
     descricao = models.TextField(blank=True)
     vagas = models.IntegerField()
-    foto_principal = models.ImageField('')
+    foto_principal = models.ImageField(upload_to='images/')
     publicado = models.BooleanField(default=True)
     data_cadastro = models.DateTimeField(default=datetime.now, blank=True)
 

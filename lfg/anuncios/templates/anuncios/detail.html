@@ -2,4 +2,4 @@
 <p>{{ anuncio.descricao }}</p>
 <p>{{ anuncio.plataforma }}</p>
 <p>{{ anuncio.vagas }}</p>
-<img hrf="{% url 'detail' anuncio.id %}">
+<img src="{{ anuncio.foto_principal.url }}">

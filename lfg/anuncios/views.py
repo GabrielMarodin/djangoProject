@@ -3,9 +3,9 @@ from .models import Anuncio
 from django.http import Http404
 
 def index(request):
-    anuncios = Anuncio.objects.order_by('-pub_date')
+    anuncios = Anuncio.objects.order_by('-data_cadastro')
     context = {'anuncios': anuncios,}
-    return render(request, 'anuncios/index.html', context)
+    return render(request, 'anuncios/anuncios.html', context)
 
 def detail(request, anuncio_id):
     anuncio = get_object_or_404(Anuncio, pk=anuncio_id)
