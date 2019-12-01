@@ -2,8 +2,6 @@ from django.db import models
 from datetime import datetime
 
 class User(models.Model):
-    anuncio = models.CharField(max_length=200)
-    anuncio_id = models.IntegerField()
     nome = models.CharField(max_length=200)
     email = models.EmailField()
     fone = models.CharField(max_length=20)

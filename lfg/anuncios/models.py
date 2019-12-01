@@ -4,7 +4,7 @@ from datetime import datetime
 from user.models import User
 
 class Anuncio(models.Model):
-    user = models.ForeignKey(user, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     titulo = models.CharField(max_length=200)
     plataforma = models.CharField(max_length=100)
     jogo = models.CharField(max_length=100)
