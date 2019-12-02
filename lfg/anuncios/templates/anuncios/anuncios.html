@@ -1,29 +1,36 @@
-<div class="anuncios">
-    <div class="row">
-    {% if anuncios %}
-        {% for anuncio in anuncios %}
-            <div class="col m-2">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="{{ anuncio.foto_principal.url }}">
-                        <span class="card-title">{{ anuncio.titulo }}</span>
-                        <span class="card-title">{{ anuncio.jogo }}</span>
+{% extends "default/layout.html" %}
+{% block title %}
+    Anuncios
+{% endblock %}
+{% block content %}
+    <div class="divider"></div>
+    <div class="section cyan lighten-1">
+        <h3 class="center-align">Anúncios</h3>
+        <div class="row cyan lighten-4">
+            {% if anuncios %}
+                {% for anuncio in anuncios %}
+                    <div class="col m4">
+                        <div class="card large">
+                            <span class="card-title black-text">{{ anuncio.titulo }}</span></br>
+                            <span class="black-text">Jogo: {{ anuncio.jogo }}</span>
+                            <div class="card-image">
+                                <img src="{{ anuncio.foto_principal.url }}">
+                            </div>
+                            <div class="card-content">
+                                <p>{{ anuncio.descricao }}</p>
+                            </div>
+                            <div class="card-action">
+                                <p>Data publicação: {{anuncio.data_cadastro|date:"D d M Y"}} </br> Por: {{anuncio.user.nome}}</p>
+                                <a href="{% url 'anuncios:detail' anuncio.id %}">Vagas: {{ anuncio.vagas }} Plataforma: {{ anuncio.plataforma }}</a>
+                                <a href="{% url 'anuncios:detail' anuncio.id %}">Detalhes </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <p>{{ anuncio.descricao }}</p>
-                        <p>{{anuncio.data_cadastro|date:"D d M Y"}}</p>
-                        <p>por: {{anuncio.user.nome}} </p>
-                    </div>
-                    <div class="card-action">
-                        <a href="{% url 'anuncios:detail' anuncio.id %}">Detalhes</a>
-                        <a href="{% url 'anuncios:detail' anuncio.id %}">Vagas: {{ anuncio.vagas }}</a>
-                        <a href="{% url 'anuncios:detail' anuncio.id %}">{{ anuncio.plataforma }}</a>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-    {% else %}
-        <p>Não tem anuncios disponíveis.</p>
-    {% endif %}
+                {% endfor %}
+            {% else %}
+                <p>Não tem anuncios disponíveis.</p>
+            {% endif %}
+        </div>
     </div>
-</div>
+   
+{% endblock %}

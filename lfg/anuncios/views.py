@@ -25,7 +25,7 @@ def create(request):
             new_anuncio.save()
             form.save_m2m()
             return HttpResponseRedirect('/anuncios/')
-            
+
     else:
         form = AnuncioForm()
 

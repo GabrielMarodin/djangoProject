@@ -7,7 +7,7 @@ class AnuncioForm(forms.ModelForm):
         model = Anuncio
         fields = ['titulo','plataforma','jogo', 'descricao', 'vagas', 'foto_principal']
         widgets = {
-            'plataforma': forms.RadioSelect(choices=plataforma_choices),
-            'jogo': forms.RadioSelect(choices=jogo_choices),
-            'vagas': forms.RadioSelect(choices=vagas_choices)
+            'plataforma': forms.RadioSelect(),
+            'jogo': forms.RadioSelect(),
+            'vagas': forms.RadioSelect()
         }
