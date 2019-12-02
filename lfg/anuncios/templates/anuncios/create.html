@@ -1,0 +1,7 @@
+<div class="row">
+    <form class="col m-12" enctype="multipart/form-data" action="/create/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
