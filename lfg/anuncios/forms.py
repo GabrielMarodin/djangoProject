@@ -11,3 +11,4 @@ class AnuncioForm(forms.ModelForm):
             'jogo': forms.RadioSelect(),
             'vagas': forms.RadioSelect()
         }
+ 
