@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from .models import User
+from .forms import UserForm
 
 def register(request):
   if request.method == 'POST':
@@ -35,7 +36,8 @@ def register(request):
       messages.error(request, 'Passwords do not match')
       return redirect('register')
   else:
-    return render(request, 'user/register.html')
+    form = UserForm()
+    return render(request, 'user/register.html',{'form': form})
 
 def login(request):
   if request.method == 'POST':
@@ -52,7 +54,8 @@ def login(request):
       messages.error(request, 'Invalid credentials')
       return redirect('login')
   else:
-    return render(request, 'user/login.html')
+    form = UserForm()
+    return render(request, 'user/login.html', {'form': form})
 
 def logout(request):
   if request.method == 'POST':

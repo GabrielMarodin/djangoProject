@@ -5,7 +5,7 @@ class User(models.Model):
     username = models.CharField(max_length=200)
     id = models.IntegerField(primary_key='true')
     email = models.EmailField()
-    password = models.CharField
+    password = models.CharField(max_length=200, default="senha")
     data_user = models.DateTimeField(default=datetime.now, blank=True)
     def __str__(self):
         return self.username
