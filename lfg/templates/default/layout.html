@@ -5,6 +5,7 @@
     <title>{% block title %}{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'default/materialize.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'default/style.css' %}"/>
 </head>
 
 <body>
@@ -21,9 +22,9 @@
         {% endblock %}
     </div>
     <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <p>© 2019</p>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019
             </div>
         </div>
     </footer>
